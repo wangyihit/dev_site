@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/jslib/ju/jquery-ui.min.css">
+<link rel="stylesheet" href="/jslib/ju/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="/jslib/ju/jquery-ui.theme.min.css">
+<script src="/jslib/ju/jquery.js"></script>
+<script src="/jslib/ju/jquery-ui.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".display_link").click(function (e) {
+            var target = e.target;
+            var url = $(target).attr("href_data");
+            $("#display")[0].src = url;
+        });
+    });
+</script>
+
+<style type="text/css">
+    table {
+        width: 100%;
+        height: 100%;
+    }
+    tr {
+        width: 100%;
+    }
+    p {
+        width: 100%;
+    }
+
+</style>
+
+<h1>{{title}}</h1>
+<table>
+    <tr>
+        <td  width="20%">
+            <p>
+                {{{links}}}
+            </p>
+        </td>
+        <td  width="80%">
+            <iframe id="display" width="100%" height="700px"></iframe>
+        </td>
+    </tr>
+</table>
+
