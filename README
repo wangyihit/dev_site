@@ -1,1 +1,6 @@
 node express site for dev
+parse body automatically
+
+.json(): Parses JSON-formatted text for bodies with a Content-Type of application/json.
+.raw(): Parses HTTP body in to a Buffer for specified custom Content-Types, although the default accepted Content-Type is application/octet-stream.
+.text(): Parses HTTP bodies with a Content-Type of text/plain, which returns it as a plain string.
