@@ -7,6 +7,7 @@ let bodyParser = require("body-parser");
 
 let index = require("./routes/index");
 let remoteLogger = require("./routes/remote_logger");
+let redisBackend = require("./routes/redis_backend");
 let users = require("./routes/users");
 let qrcode = require("./routes/qrcode");
 let app = express();
@@ -29,6 +30,7 @@ app.use("/", index);
 app.use("/users", users);
 app.use("/qrcode", qrcode);
 app.use("/log", remoteLogger);
+app.use("/redis", redisBackend);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     "use strict";
