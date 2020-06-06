@@ -4,7 +4,7 @@ let favicon = require("serve-favicon");
 let logger = require("morgan");
 let cookieParser = require("cookie-parser");
 let bodyParser = require("body-parser");
-
+let cors = require('cors')
 let index = require("./routes/index");
 let remoteLogger = require("./routes/remote_logger");
 let redisBackend = require("./routes/redis_backend");
@@ -19,6 +19,7 @@ app.set("view engine", "hbs");
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.use(logger("dev"));
+app.use(cors());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.text({limit: '50mb'}));
 app.use(bodyParser.raw({limit: '50mb'}));
