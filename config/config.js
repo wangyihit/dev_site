@@ -5,8 +5,9 @@
 let AppConfig = {};
 
 let redisCache = {};
-redisCache.host = "pi3";
+redisCache.host = "127.0.0.1";
 redisCache.port = 6379;
+redisCache.password = "123456"
 AppConfig.redisCache = redisCache;
 
 module.exports = AppConfig;
