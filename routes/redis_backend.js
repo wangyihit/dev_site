@@ -5,14 +5,10 @@
 let express = require("express");
 let router = express.Router();
 const redis = require("redis");
-const appConfig = require("../config/config")
-redisCache = appConfig.redisCache;
+const appConfig = require("../config/config");
+let redisCache = appConfig.redisCache;
 const client = redis.createClient(redisCache.port, redisCache.host);
 
-/*
-*   
-*   /log/
-* */
 /* eslint no-unused-vars: 0 */
 router.post("/hset", function(req, res, next) {
     /* eslint no-unused-vars: 1 */
